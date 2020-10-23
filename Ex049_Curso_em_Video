@@ -1,0 +1,8 @@
+# Exercício Python 49: Refaça o DESAFIO 9, mostrando a tabuada de um número que o
+# usuário escolher, só que agora utilizando um laço for.
+
+n1 = int(input('Entre um número para ver a tabuada do mesmo: '))
+
+for c in range(0, 10):
+    print('=-' * 2)
+    print(n1 * c)
