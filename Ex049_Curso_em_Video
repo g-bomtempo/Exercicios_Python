@@ -3,6 +3,6 @@
 
 n1 = int(input('Entre um número para ver a tabuada do mesmo: '))
 
-for c in range(0, 10):
+for c in range(1, 11):
     print('=-' * 2)
     print(n1 * c)
