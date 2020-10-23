@@ -1,0 +1,14 @@
+# Exercício Python 52: Faça um programa que leia um número inteiro e diga se ele é ou não
+# um número primo.
+
+numero = int(input('Entre com um número inteiro: '))
+contador = 0
+
+for c in range(numero, 0, -1):
+    if numero % c == 0:
+        contador = contador + 1
+
+if contador == 2:
+    print('O numero {} é PRIMO!'.format(numero))
+else:
+    print('O numero {} não é PRIMO!'.format(numero))
