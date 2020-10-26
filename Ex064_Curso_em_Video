@@ -1,0 +1,18 @@
+# Exercício Python 64: Crie um programa que leia vários números inteiros pelo teclado.
+# O programa só vai parar quando o usuário digitar o valor 999, que é a condição de
+# parada. No final, mostre quantos números foram digitados e qual foi a soma entre eles
+# (desconsiderando o flag).
+
+
+n1 = soma = contador = 0
+
+while n1 != 1:
+    numeros = int(input('Entre o número desejado [999 para parar]: '))
+    if numeros == 999:
+        n1 = 1
+    else:
+        soma = soma + numeros
+        contador = contador + 1
+
+print('Deram entrada em {} numeros com sua soma {}'.format(contador, soma))
+print('Programa finalizado')
