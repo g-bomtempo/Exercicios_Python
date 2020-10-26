@@ -1,0 +1,12 @@
+# Exercício Python 61: Refaça o DESAFIO 51, lendo o primeiro termo e a razão de uma PA,
+# mostrando os 10 primeiros termos da progressão usando a estrutura while.
+
+primeiro = int(input('Entre o primeiro termo da P.A: '))
+razao = int(input('Entre a razão da P.A: '))
+soma = primeiro
+n1 = 0
+
+while n1 < 10:
+    print(soma, end=' ')
+    soma = soma + razao
+    n1 = n1 + 1
