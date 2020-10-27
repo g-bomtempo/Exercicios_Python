@@ -1,0 +1,43 @@
+# Exercício Python 70: Crie um programa que leia o nome e o preço de vários produtos.
+# O programa deverá perguntar se o usuário vai continuar ou não. No final, mostre:
+# A) qual é o total gasto na compra.
+# B) quantos produtos custam mais de R$1000.
+# C) qual é o nome do produto mais barato.
+
+soma = contador = menor_preco = 0
+mais_barato = ' '
+
+print('-'*18)
+print('LOJA SUPER BARATÃO')
+print('-'*18)
+
+while True:
+    nome = str(input('Entre com o nome do produto: ')).lower().strip()
+    preco = float(input('Entre o preço do produto: '))
+    continua = ' '
+
+    soma = preco + soma
+
+    while continua not in 'sn':
+        continua = str(input('Deseja continuar com o programa [S/N]: ')).lower().strip()[0]
+
+    if preco > 1000:
+        contador = contador + 1
+
+    if soma == preco:
+        mais_barato = nome
+        menor_preco = preco
+
+    if preco < menor_preco:
+        mais_barato = nome
+
+    if continua == 's':
+        print('-' * 20)
+        print('Entre o novo produto')
+    elif continua == 'n':
+        print('\nPROGRAMA FINALIZADO')
+        break
+
+print(f'O total gasto foi de {soma:.2f}')
+print(f'Tivemos {contador} produtos que custam mais de R$ 1.000')
+print(f'O nome do produto mais barato é {mais_barato}')
