@@ -1,0 +1,35 @@
+# Exercício Python 68: Faça um programa que jogue par ou ímpar com o computador.
+# O jogo só será interrompido quando o jogador perder, mostrando o total de vitórias
+# consecutivas que ele conquistou no final do jogo.
+
+import random
+soma = contador = 0
+entrada = ' '
+
+while True:
+    computador = random.randint(0, 11)
+    print('\nVamos jogar PAR OU IMPAR')
+    numero = int(input('Entre seu número: '))
+    resultado = (computador + numero)
+
+    while entrada not in 'pi':
+        entrada = str(input('Entre par ou ímpar [P/I]: ')).strip().lower()[0]
+
+    if entrada == 'p':
+        if resultado % 2 == 0:
+            print(f'\nVocê ganhou! Escolhi {computador} e você {numero}')
+            print('Deste modo, você pode continuar jogando')
+            contador = contador + 1
+        else:
+            print(f'\nVocê perdeu! Escolhi {computador} e você {numero}')
+            print(f'Você venceu {contador} vezes ')
+            break
+    elif entrada == 'i':
+        if resultado % 2 == 0:
+            print(f'\nVocê perdeu! Escolhi {computador} e você {numero}')
+            print(f'Você venceu {contador} vezes ')
+            break
+        else:
+            print(f'\nVocê ganhou! Escolhi {computador} e você {numero}')
+            print('Deste modo, você pode continuar jogando')
+            contador = contador + 1
