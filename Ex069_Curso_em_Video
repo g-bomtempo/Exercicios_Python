@@ -1,0 +1,42 @@
+# Exercício Python 69: Crie um programa que leia a idade e o sexo de várias pessoas.
+# A cada pessoa cadastrada, o programa deverá perguntar se o usuário quer ou não continuar.
+# No final, mostre:
+# A) quantas pessoas tem mais de 18 anos.
+# B) quantos homens foram cadastrados.
+# C) quantas mulheres tem menos de 20 anos.
+
+contador_18 = contador_homens = contador_mulher = 0
+
+while True:
+    idade = int(input('Entre a idade da pessoa: '))
+    sexo = ' '
+    continua = ' '
+
+    while sexo not in 'mf':
+        sexo = str(input('Entre o sexo da pessoa: [M/F] ')).strip().lower()[0]
+
+    while continua not in 'sn':
+        continua = str(input('Você deseja continuar? [S/N] ')).lower().strip()[0]
+
+    if idade > 18:
+        contador_18 = contador_18 + 1
+
+    if sexo == 'm':
+        contador_homens = contador_homens + 1
+
+    if sexo == 'f' and idade < 20:
+        contador_mulher = contador_mulher + 1
+
+    if continua == 's':
+        print('-'*20)
+        print('Entre com os novos dados.')
+    elif continua == 'n':
+        print('\nPROGRAMA FINALIZADO')
+        break
+    else:
+        print('Entre um valor válido')
+        continua = str(input('Você deseja continuar? [S/N] ')).lower().strip()
+
+print(f'Temos {contador_18} pessoas com mais de 18 anos')
+print(f'Temos {contador_homens} homens cadastrados')
+print(f'Temos {contador_mulher} mulheres menores de 20 anos')
