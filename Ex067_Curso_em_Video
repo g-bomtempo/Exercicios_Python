@@ -1,0 +1,14 @@
+#Exercício Python 67: Faça um programa que mostre a tabuada de vários números,
+# um de cada vez, para cada valor digitado pelo usuário.
+# O programa será interrompido quando o número solicitado for negativo.
+
+while True:
+    entrada = int(input('Entre o número para verificar a tabuada [número negativo para interromper]: '))
+    print('-' * 20)
+    if entrada < 0:
+        print('Programa Finalizado!')
+        break
+    else:
+        for n in range(1, 11):
+            print(f'{entrada} x {n} = {entrada * n}')
+    print('-' * 20)
