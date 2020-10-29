@@ -1,0 +1,25 @@
+# Exercício Python 72: Crie um programa que tenha uma dupla totalmente preenchida com
+# uma contagem por extenso, de zero até vinte. Seu programa deverá ler um número
+# pelo teclado (entre 0 e 20) e mostrá-lo por extenso.
+
+lista = ('zero', 'um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'novo',
+         'dez', 'onze', 'doze', 'treze', 'quatorze', 'quinze', 'dezesseis', 'dezessete',
+         'dezeoito', 'dezenove', 'vinte')
+continuar = ''
+
+numero = int(input('Entre um número de 0 até 20: '))
+while True:
+    if numero >= 21 or numero < 0:
+        print('Entre um valor válido')
+        numero = int(input('Entre um número de 0 até 20: '))
+    else:
+        print(f'Você digitou o número {lista[numero]}')
+        continuar = str(input('Você deseja continuar [S/N] ')).strip().lower()[0]
+        if continuar == 's':
+            numero = int(input('Entre um número de 0 até 20: '))
+        if continuar == 'n':
+            print('Programa executado com sucesso!')
+            break
+        else:
+            print('Entre uma opção válida')
+            numero = int(input('Entre um número de 0 até 20: '))
