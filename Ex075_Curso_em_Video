@@ -1,0 +1,42 @@
+# Exercício Python 075: Desenvolva um programa que leia quatro valores
+# pelo teclado e guarde-os em uma tupla. No final, mostre:
+# A) Quantas vezes apareceu o valor 9.
+# B) Em que posição foi digitado o primeiro valor 3.
+# C) Quais foram os números pares.
+
+valores = []
+valores_pares = []
+contador = 0
+primeiro_3 = 0
+
+while True:
+    for n in range(0, 4):
+        valores.append(int(input('Informe o primeiro valor: ')))
+
+        if valores[n] == 9:
+            contador = contador + 1
+
+        if primeiro_3 == 0:
+            if valores[n] == 3:
+                primeiro_3 = n + 1
+
+        if valores[n] % 2 == 0:
+            valores_pares.append(valores[n])
+
+    break
+
+print(f'\nO numero 9 foi publicado {contador} vezes')
+# OU
+print(f'O valor 9 apareceu {valores.count(9)} vezes')
+
+if primeiro_3 != 0:
+    print(f'O primeiro 3 foi publicado na posição {primeiro_3}')
+else:
+    print('O número 3 não foi publicado nessa lista')
+# OU
+if 3 in valores:
+    print(f'O valor 3 apareceu na {valores.index(3)+1} posição')
+else:
+    print('O número 3 não foi publicado nessa lista')
+
+print(f'Os números pares são {valores_pares}')
