@@ -1,0 +1,30 @@
+# Exercício Python 73: Crie uma tupla preenchida com os 20 primeiros colocados da
+# Tabela do Campeonato Brasileiro de Futebol, na ordem de colocação. Depois mostre:
+# a) Os 5 primeiros times.
+# b) Os últimos 4 colocados.
+# c) Times em ordem alfabética.
+# d) Em que posição está o time do Atlético-MG.
+
+tabela = ('Internacional', 'Flamengo', 'Atlético-MG', 'Fluminense', 'São Paulo', 'Santos',
+          'Palmeiras', 'Fortaleza', 'Grêmio', 'Ceará', 'Atlético-GO', 'Sport', 'Corinthias',
+          'Bahia', 'Bragantino', 'Botafogo', 'Vasco', 'Atletico-PR', 'Coritiba', 'Goais')
+posicao = 1
+
+print('Os cinco primeiros times são: ')
+for times in tabela[0: 5]:
+    print(f'{times}', end=' ')
+
+print('\n\nOs 4 últimos colocados são: ')
+for times in tabela[16: 20]:
+    print(f'{times}', end=' ')
+
+print('\n\nTimes em ordem alfabética: ')
+print(sorted(tabela))
+
+for galo in tabela:
+    if galo != 'Atlético-MG':
+        posicao = posicao + 1
+    else:
+        break
+
+print(f'\nO time do Galo está na {posicao} do campeonato')
