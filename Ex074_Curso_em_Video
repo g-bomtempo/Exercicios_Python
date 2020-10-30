@@ -1,0 +1,27 @@
+# Exercício Python 074: Crie um programa que vai gerar cinco números aleatórios e
+# colocar em uma tupla. Depois disso, mostre a listagem de números gerados e também
+# indique o menor e o maior valor que estão na tupla.
+
+from random import randint
+
+contador = maior = menor = 0
+
+numeros = (randint(1, 10), randint(1, 10), randint(1, 10), randint(1, 10), randint(1, 10))
+
+print('Os números sorteados foram:', end=' ')
+for n in numeros:
+    print(f'{n}', end=' ')
+    contador = contador + 1
+
+    if contador == 1:
+        maior = menor = n
+
+    if maior < n:
+        maior = n
+
+    if menor > n:
+        menor = n
+
+print(f'\nO maior número foi {maior} e o menor foi {menor}')
+# OU
+print(f'O maior número foi {max(numeros)} e o menor foi {min(numeros)}')
