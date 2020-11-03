@@ -1,0 +1,28 @@
+lista = []
+posicao_maior = []
+posicao_menor = []
+contador = maior = menor = 0
+
+for i in range(0, 5):
+    lista.append(int(input('Entre os valores da lista: ')))
+    contador = contador + 1
+    if i == 0:
+        maior = menor = lista[i]
+    else:
+        if lista[i] > maior:
+            maior = lista[i]
+        if lista[i] < menor:
+            menor = lista[i]
+
+print('=-'*30)
+print(f'Os numeros digitados foram {lista}')
+print(f'O maior número foi {maior}')
+for i, v in enumerate(lista):
+    if v == maior:
+        print(f'Maiores numeros nas posições {i}...', end='')
+print()
+print(f'O menor número foi {menor}')
+for i, v in enumerate(lista):
+    if v == menor:
+        print(f'Menores numeros nas posicoes {i}...', end='')
+print()
