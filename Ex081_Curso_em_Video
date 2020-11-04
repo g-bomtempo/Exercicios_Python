@@ -1,0 +1,36 @@
+# Exercício Python 081: Crie um programa que vai ler vários números e
+# colocar em uma lista. Depois disso, mostre:
+# A) Quantos números foram digitados.
+# B) A lista de valores, ordenada de forma decrescente.
+# C) Se o valor 5 foi digitado e está ou não na lista.
+
+lista = []
+condicao = 's'
+lista_decrescente = []
+contador = 0
+
+while True:
+
+    if condicao == 's':
+        valores = int(input('Entre os valores desejados: '))
+        lista.append(valores)
+        contador = contador + 1
+        condicao = str(input('Voce deseja continuar? [S/N] ')).strip().lower()[0]
+
+    elif condicao == 'n':
+        print('Programa sendo finalizado')
+        break
+
+    elif condicao not in 'ns':
+        print('Entre uma condição válida.')
+        condicao = str(input('Voce deseja continuar? [S/N] ')).strip().lower()[0]
+
+print('=-' * 20)
+lista_decrescente = sorted(lista, key=int, reverse=True)
+print(f'Foram digitados {contador} valores')
+print(f'Os valores digitados foram: {lista_decrescente}')
+
+if 5 in lista:
+    print('O número 5 faz parte da lista')
+else:
+    print('O número 5 não faz parte da lista')
