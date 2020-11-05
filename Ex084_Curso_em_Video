@@ -1,0 +1,50 @@
+# Exercício Python 084: Faça um programa que leia nome e peso de várias pessoas,
+# guardando tudo em uma lista. No final, mostre:
+# A) Quantas pessoas foram cadastradas.
+# B) Uma listagem com as pessoas mais pesadas.
+# C) Uma listagem com as pessoas mais leves.
+
+lista = []
+dado = []
+condicao = 's'
+contador = mais_peso = menos_peso = 0
+
+while True:
+
+    if condicao == 's':
+        dado.append(str(input('Entre o nome da pessoa: ')))
+        dado.append(float(input('Entre o peso da pessoa: ')))
+
+        if contador == 0:
+            mais_peso_nome = menos_peso_nome = dado[0]
+            mais_peso = menos_peso = dado[1]
+        if mais_peso < dado[1]:
+            mais_peso = dado[1]
+        if menos_peso > dado[1]:
+            menos_peso = dado[1]
+
+        lista.append(dado[:])
+        dado.clear()
+        contador = contador + 1
+        condicao = str(input('Você deseja continuar? [S/N] ')).strip().lower()[0]
+
+    elif condicao == 'n':
+        print('Programa sendo finalizado')
+        break
+
+    elif condicao not in 'ns':
+        print('Entre uma condição válida')
+        condicao = str(input('Você deseja continuar? [S/N] ')).strip().lower()[0]
+
+print('-='*30)
+print(f'Foram digitados {contador} pessoas')
+print(f'O maior peso foi {mais_peso} Kg. Peso de ', end='')
+for p in lista:
+    if p[1] == mais_peso:
+        print(f'[{p[0]}] ', end='')
+print()
+print(f'O menor peso foi {menos_peso} Kg. Peso de ', end='')
+for p in lista:
+    if p[1] == menos_peso:
+        print(f'[{p[0]}] ', end='')
+print()
