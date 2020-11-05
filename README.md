@@ -9,4 +9,5 @@ Exercícios 57 até 71 -> Estrutura de Repetição while
 
 Exercícios 72 até 77 -> Tuplas em Python
 
-Exercícios 78 até 83 -> Listas em Python
+Exercícios 78 até 89 -> Listas em Python
+
