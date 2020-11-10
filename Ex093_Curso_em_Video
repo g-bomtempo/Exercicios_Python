@@ -1,0 +1,31 @@
+# Exercício Python 093: Crie um programa que gerencie o aproveitamento
+# de um jogador de futebol. O programa vai ler o nome do jogador e quantas partidas
+# ele jogou. Depois vai ler a quantidade de gols feitos em cada partida.
+# No final, tudo isso será guardado em um dicionário, incluindo o total de gols feitos
+# durante o campeonato.
+
+lista = []
+dicionario = {}
+total = contador = 0
+
+dicionario['nome'] = str(input('Nome do Jogador: '))
+partidas = int(input(f'Quantas partidas {dicionario["nome"]} jogos? '))
+
+for c in range(0, partidas):
+    lista.append(int(input(f'Quantos gols na partida {c}? ')))
+
+dicionario['gols'] = lista[:]
+dicionario['total'] = sum(lista)
+
+print('=-'*30)
+print(dicionario)
+print('=-'*30)
+print(f'O campo nome tem o valor {dicionario["nome"]}')
+print(f'O campo gols tem o valor {dicionario["gols"]}')
+print(f'O campo total tem o valor {dicionario["total"]}')
+print('-='*30)
+
+for e in dicionario["gols"]:
+    print(f'Na partida {contador}, fez {e} gols')
+    contador = contador + 1
+print(f'Foi um total de {dicionario["total"]} gols')
