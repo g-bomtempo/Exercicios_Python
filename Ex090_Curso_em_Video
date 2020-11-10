@@ -1,0 +1,18 @@
+# Exercício Python 090: Faça um programa que leia nome e média de um aluno,
+# guardando também a situação em um dicionário. No final, mostre o conteúdo da
+# estrutura na tela.
+
+lista = {}
+
+lista['Nome'] = str(input('Nome: '))
+lista['Media'] = float(input(f'Média de {lista["Nome"]}: '))
+
+print(f'Nome é igual a {lista["Nome"]}')
+print(f'Média é igual a {lista["Media"]}')
+
+if lista["Media"] >= 7:
+    print('Situação = APROVADO')
+elif 5 <= lista["Media"] < 7:
+    print('Situação = RECUPERAÇÃO')
+else:
+    print('Situação = REPROVADO')
