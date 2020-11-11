@@ -12,3 +12,5 @@ Exercícios 72 até 77 -> Tuplas em Python
 Exercícios 78 até 89 -> Listas em Python
 
 Exercícios 90 até 95 -> Dicionários em Python
+
+Exercícios 96 até 106 -> Funções em Python
