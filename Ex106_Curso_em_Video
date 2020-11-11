@@ -1,0 +1,21 @@
+# Exercício Python 106: Faça um mini-sistema que utilize o Interactive Help do Python.
+# O usuário vai digitar o comando e o manual vai aparecer.
+# Quando o usuário digitar a palavra ‘FIM’, o programa se encerrará.
+
+
+def ajuda(frase):
+    while True:
+        if frase == 'fim':
+            print('Programa finalizado, VOLTE SEMPRE')
+            break
+        else:
+            help(frase)
+            print('~'*30)
+            print('  SISTEMA DE AJUDA PyHELP')
+            print('~'*30)
+            frase = str(input('Função ou Biblioteca > ')).lower().strip()
+
+
+# Programa Principal:
+entrada = str(input('Função ou Biblioteca > ')).lower().strip()
+ajuda(entrada)
