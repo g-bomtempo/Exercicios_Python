@@ -1,0 +1,38 @@
+# Exercício Python 108: Adapte o código do desafio #107, criando uma função adicional
+# chamada moeda() que consiga mostrar os números como um valor monetário formatado.
+
+
+# Arquivo teste
+from ex108 import moeda
+
+p = float(input('Digite um preço: R$ '))
+print(f'A metade de {moeda.moeda(p)} é {moeda.moeda(moeda.metade(p))}')
+print(f'O dobro de {moeda.moeda(p)} é {moeda.moeda(moeda.dobro(p))}')
+print(f'Aumentando 10%, temos {moeda.moeda(moeda.aumentar(p, 10))}')
+print(f'Reduzindo 13%, teos {moeda.moeda(moeda.diminuir(p, 13))}')
+
+
+# Arquivo moeda
+
+def metade(n=0):
+    n = n / 2
+    return n
+
+
+def dobro(n=0):
+    n = n * 2
+    return n
+
+
+def aumentar(n=0, porc=0):
+    n = n + (n * (porc/100))
+    return n
+
+
+def diminuir(n=0, porc=0):
+    n = n - (n * (porc/100))
+    return n
+
+
+def moeda(preco=0, moeda='R$'):
+    return f'{moeda}{preco:.2f}'.replace('.', ',')
