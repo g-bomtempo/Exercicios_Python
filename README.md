@@ -16,3 +16,5 @@ Exercícios 90 até 95 -> Dicionários em Python
 Exercícios 96 até 106 -> Funções em Python
 
 Exercícios 107 até 112 -> Módulos em Python
+
+Exercícios 113 até 115 -> Tratamento de Erros em Python
